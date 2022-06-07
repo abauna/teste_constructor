@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>game eventpart2</name>
+    <events>
+        <variable constant="0" name="scorecorreto" sid="625549803087761" static="0" type="number">0</variable>
+        <variable constant="0" name="lifecorreto" sid="420255487872239" static="0" type="number">5</variable>
+        <event-block sid="480856510863338">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="461210511546470" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="125088089338780" type="tiro">
+                    <param id="0" name="Angle">360</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="894005104234244">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="896217372623479" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="254544674670514" type="tiro">
+                    <param id="0" name="Angle">180</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="594512524792438">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="354301744277589" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="734295233043951" type="ovni">
+                    <param id="0" name="Object">tiro</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="164368390072406" type="tiro">
+                    <param id="0" name="Angle">270</param>
+                </action>
+                <action id="0" name="Play" sid="231527482383557" type="Audio">
+                    <param id="0" name="Audio file">sfx_wpn_cannon4</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-4</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="409116471847932">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="190789365956134" type="System">
+                    <param id="0" name="Interval (seconds)">0.05</param>
+                </condition>
+                <condition behavior="Bullet" id="0" name="Compare speed" sid="410235824200398" type="tiro">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Speed">400</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="332296800521137" type="tiro">
+                    <param id="0" name="Object">reflexo</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="424633353759504" type="reflexo">
+                    <param id="0" name="Angle">230</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>lmao this shit messed up for some fucked up reason i don&apos;t understand</comment>
+        <event-group description="" sid="208313795916412" title="spawn2">
+            <sub-events>
+                <event-block sid="131299039477614">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="610693589732773" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="652422288632774" type="Sprite5">
+                            <param id="0" name="Angle">-270</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="348232780606432" type="Sprite2">
+                            <param id="0" name="Angle">-270</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="981395389462156" type="Sprite">
+                            <param id="0" name="Angle">-270</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="968995393887938" type="Sprite3">
+                            <param id="0" name="Angle">-270</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="983602294285270" type="Sprite4">
+                            <param id="0" name="Angle">-270</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="224071548546319">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="505492515823691" type="tiro">
+                    <param id="0" name="Object">Sprite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="691806225898667" type="tiro" />
+                <action id="-9" name="Destroy" sid="513837364155566" type="Sprite" />
+                <action id="-10" name="Add to" sid="861337500171048" type="System">
+                    <param id="0" name="Variable">scorecorreto</param>
+                    <param id="1" name="Value">250</param>
+                </action>
+                <action id="0" name="Play" sid="183711850264038" type="Audio">
+                    <param id="0" name="Audio file">511982-8_Bit_Small_Impact_01_-GAMEVideo-8_bit-impact-hit-damaged</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="604342015926893">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="303752588910780" type="tiro">
+                    <param id="0" name="Object">Sprite2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="519394965335606" type="tiro" />
+                <action id="-9" name="Destroy" sid="543479710120669" type="Sprite2" />
+                <action id="-10" name="Add to" sid="393784467673860" type="System">
+                    <param id="0" name="Variable">scorecorreto</param>
+                    <param id="1" name="Value">250</param>
+                </action>
+                <action id="0" name="Play" sid="406898013877308" type="Audio">
+                    <param id="0" name="Audio file">511982-8_Bit_Small_Impact_01_-GAMEVideo-8_bit-impact-hit-damaged</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="854738580875903">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="285800939958774" type="tiro">
+                    <param id="0" name="Object">Sprite3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="264001531964328" type="tiro" />
+                <action id="-9" name="Destroy" sid="296320128747288" type="Sprite3" />
+                <action id="-10" name="Add to" sid="769661637554488" type="System">
+                    <param id="0" name="Variable">scorecorreto</param>
+                    <param id="1" name="Value">250</param>
+                </action>
+                <action id="0" name="Play" sid="856767686626452" type="Audio">
+                    <param id="0" name="Audio file">511982-8_Bit_Small_Impact_01_-GAMEVideo-8_bit-impact-hit-damaged</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="153665978716169">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="161880897298087" type="tiro">
+                    <param id="0" name="Object">Sprite4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="409300651449816" type="tiro" />
+                <action id="-9" name="Destroy" sid="988559505455875" type="Sprite4" />
+                <action id="-10" name="Add to" sid="751912324788714" type="System">
+                    <param id="0" name="Variable">scorecorreto</param>
+                    <param id="1" name="Value">250</param>
+                </action>
+                <action id="0" name="Play" sid="682014466449226" type="Audio">
+                    <param id="0" name="Audio file">511982-8_Bit_Small_Impact_01_-GAMEVideo-8_bit-impact-hit-damaged</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="773149666372441">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="213524372397390" type="tiro">
+                    <param id="0" name="Object">Sprite5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="946647739262139" type="tiro" />
+                <action id="-9" name="Destroy" sid="942689383516269" type="Sprite5" />
+                <action id="-10" name="Add to" sid="973406260875461" type="System">
+                    <param id="0" name="Variable">scorecorreto</param>
+                    <param id="1" name="Value">250</param>
+                </action>
+                <action id="0" name="Play" sid="972235048325944" type="Audio">
+                    <param id="0" name="Audio file">511982-8_Bit_Small_Impact_01_-GAMEVideo-8_bit-impact-hit-damaged</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="746167871206744">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="699607496906869" type="System" />
+                <condition id="-1" name="Every tick" sid="117424662969626" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="874089086422078" type="life">
+                    <param id="0" name="Text">&quot;life: &quot;&amp;lifecorreto</param>
+                </action>
+                <action id="0" name="Set text" sid="732027372297550" type="score">
+                    <param id="0" name="Text">&quot;score: &quot;&amp;scorecorreto</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="633577741505478">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="793790996893064" type="System">
+                    <param id="0" name="Variable">lifecorreto</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="329069670909722" type="System">
+                    <param id="0" name="Layout">you lose...</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="896759955220038" title="FZ1">
+            <sub-events>
+                <event-block sid="656776768596291">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="990782157544235" type="System">
+                            <param id="0" name="Variable">scorecorreto</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">25000</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="139456461611756" type="System">
+                            <param id="0" name="Layout">game fz2</param>
+                        </action>
+                        <action id="-26" name="Restart layout" sid="937961613956065" type="System" />
+                        <action id="-12" name="Set group active" sid="269536142091780" type="System">
+                            <param id="0" name="Group name">&quot;fzender&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="571851824727758" type="System">
+                            <param id="0" name="Group name">&quot;FZ1&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="781915371633482" title="FZ2">
+            <sub-events>
+                <event-block sid="382617369691789">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="668436809626765" type="System">
+                            <param id="0" name="Variable">scorecorreto</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">25000</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="880070687039551" type="System">
+                            <param id="0" name="Layout">gamefs3 boss</param>
+                        </action>
+                        <action id="6" name="Stop" sid="932264652942688" type="Audio">
+                            <param id="0" name="Tag">&quot;GAMEMSC2&quot;</param>
+                        </action>
+                        <action id="6" name="Stop" sid="558320152563773" type="Audio">
+                            <param id="0" name="Tag">&quot;sad2&quot;</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="837540162172584" type="System">
+                            <param id="0" name="Group name">&quot;FZ2&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="229975326983743">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="860108587209147" type="Sprite3">
+                    <param id="0" name="Object">killnet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="800899164014885" type="Sprite3" />
+            </actions>
+        </event-block>
+        <event-block sid="714177321558004">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="450470676073024" type="Sprite4">
+                    <param id="0" name="Object">killnet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="150372752719213" type="Sprite4" />
+            </actions>
+        </event-block>
+        <event-block sid="640778374497758">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="568605122395743" type="Sprite5">
+                    <param id="0" name="Object">killnet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="819709415381984" type="Sprite5" />
+            </actions>
+        </event-block>
+        <event-block sid="146372087535655">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="351041480397017" type="Sprite2">
+                    <param id="0" name="Object">killnet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="687230776154242" type="Sprite2" />
+            </actions>
+        </event-block>
+        <event-block sid="691166990242060">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="921379147475663" type="Sprite">
+                    <param id="0" name="Object">killnet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="731684503674259" type="Sprite" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="945343866609598" title="fz1msc">
+            <sub-events>
+                <event-block sid="598790763625900">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="911173755254848" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="205340049946726" type="Audio">
+                            <param id="0" name="Audio file">yt1s.com - Doom Eternal OST The Only Thing They Fear Is You 8bit Remix</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-2</param>
+                            <param id="1" name="Tag (optional)">&quot;GAMEMSC&quot;</param>
+                        </action>
+                        <action id="6" name="Stop" sid="686008432508229" type="Audio">
+                            <param id="0" name="Tag">&quot;mainmenu&quot;</param>
+                        </action>
+                        <action id="6" name="Stop" sid="816788631035771" type="Audio">
+                            <param id="0" name="Tag">&quot;sad2&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="604327163639382" title="fz2msc">
+            <sub-events>
+                <event-block sid="293979053627160">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="845076353403017" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="460910886683784" type="Audio">
+                            <param id="0" name="Audio file">y2meta.com-Not-dead-YET_-_battle-theme_-chiptune-remix-_320-kbps_</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-2</param>
+                            <param id="1" name="Tag (optional)">&quot;GAMEMSC2&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="553929893165234" type="Audio">
+                            <param id="0" name="Audio file">y2meta.com-Rain-Sound-Effect-Short-_2-minutes_-♪-_320-kbps_</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">19</param>
+                            <param id="1" name="Tag (optional)">&quot;sad2&quot;</param>
+                        </action>
+                        <action id="2" name="Set muted" sid="634362316446469" type="Audio">
+                            <param id="0" name="Tag">&quot;GAMEMSC&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="925570030648727">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="551262474063395" type="System">
+                    <param id="0" name="Interval (seconds)">1.2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="115832744383934" type="System">
+                    <param id="0" name="Object to create">Sprite</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(842.4)</param>
+                    <param id="3" name="Y">random(14.5)</param>
+                </action>
+                <action id="-16" name="Wait" sid="923355839603513" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-3" name="Create object" sid="366806053566809" type="System">
+                    <param id="0" name="Object to create">Sprite2</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(842.4)</param>
+                    <param id="3" name="Y">random(14.5)</param>
+                </action>
+                <action id="-16" name="Wait" sid="626625471013683" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-3" name="Create object" sid="646953824630393" type="System">
+                    <param id="0" name="Object to create">Sprite3</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(842.4)</param>
+                    <param id="3" name="Y">random(14.5)</param>
+                </action>
+                <action id="-16" name="Wait" sid="413356729854186" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-3" name="Create object" sid="207523759338870" type="System">
+                    <param id="0" name="Object to create">Sprite4</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(842.4)</param>
+                    <param id="3" name="Y">random(14.5)</param>
+                </action>
+                <action id="-16" name="Wait" sid="785386908165412" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-3" name="Create object" sid="529941103143785" type="System">
+                    <param id="0" name="Object to create">Sprite5</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(842.4)</param>
+                    <param id="3" name="Y">random(14.5)</param>
+                </action>
+                <action id="-16" name="Wait" sid="945340287171599" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="806614331321958">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="940822910628254" type="tiro" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="716684134801354" type="tiro" />
+                <action id="-11" name="Subtract from" sid="558328814191213" type="System">
+                    <param id="0" name="Variable">scorecorreto</param>
+                    <param id="1" name="Value">150</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="195379252789014">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="409391458033850" type="tiro">
+                    <param id="0" name="Object">barreiraantinoclip</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="305404003665563" type="tiro" />
+                <action id="-11" name="Subtract from" sid="271146820234073" type="System">
+                    <param id="0" name="Variable">scorecorreto</param>
+                    <param id="1" name="Value">150</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" inactive="1" sid="338300548735609" title="fzender">
+            <sub-events>
+                <event-block sid="138397955719693">
+                    <conditions>
+                        <condition id="-3" name="On end of layout" sid="156465453972650" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="799426192729757" type="System">
+                            <param id="0" name="Variable">scorecorreto</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="829162668485088" type="System">
+                            <param id="0" name="Group name">&quot;FZ1&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="419391232553910" type="System">
+                            <param id="0" name="Group name">&quot;FZ2&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="765403774233866" type="System">
+                            <param id="0" name="Group name">&quot;fz1msc&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="416617484397559" type="System">
+                            <param id="0" name="Group name">&quot;fz2msc&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="446443407710084" type="System">
+                            <param id="0" name="Group name">&quot;fzender&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="584482399476418" title="death">
+            <sub-events>
+                <event-block sid="141053992835530">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="532317792135682" type="System">
+                            <param id="0" name="Variable">scorecorreto</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">-1500</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="641932107257672" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="973969141192990" type="System">
+                            <param id="0" name="Group name">&quot;death2&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="515390275135364" type="System">
+                            <param id="0" name="Variable">scorecorreto</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="380658454952994">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="285354372285049" type="ovni">
+                            <param id="0" name="Object">Sprite</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="453751938666443" type="System">
+                            <param id="0" name="Group name">&quot;death2&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="662088425863112">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="914440033391540" type="ovni">
+                            <param id="0" name="Object">Sprite2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="281708213872835" type="System">
+                            <param id="0" name="Group name">&quot;death2&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="136971136281350">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="669319585719002" type="ovni">
+                            <param id="0" name="Object">Sprite3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="654013091780038" type="System">
+                            <param id="0" name="Group name">&quot;death2&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="139960946693073">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="980322382958595" type="ovni">
+                            <param id="0" name="Object">Sprite5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="156131530054691" type="System">
+                            <param id="0" name="Group name">&quot;death2&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="860935036496474">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="151431901256977" type="ovni">
+                            <param id="0" name="Object">Sprite3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="273092102908763" type="System">
+                            <param id="0" name="Group name">&quot;death2&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="153886830438335">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="944925705586219" type="Sprite4">
+                            <param id="0" name="Object">Sprite4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="253507329060326" type="System">
+                            <param id="0" name="Group name">&quot;death2&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="258078413006898" title="death2">
+            <sub-events>
+                <event-block sid="847882769578937">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="604861682916421" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="678320749463317" type="Sprite5">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="690520631992102" type="Sprite2">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="592702840942345" type="Sprite">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="779713211885375" type="Sprite3">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="261367631354117" type="Sprite4">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="370395955153147">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="870082444391869" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="817208151348989" type="ovni" />
+                        <action id="-12" name="Set group active" sid="275774973274807" type="System">
+                            <param id="0" name="Group name">&quot;spawn2&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="486332885240186" type="Audio">
+                            <param id="0" name="Audio file">511979-8_Bit_Large_Destroyed_02_-GAMEVideo-8_bit-impact-hit-damaged-destroyed</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">5</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="332845389762194" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="651135994303082" type="System">
+                            <param id="0" name="Variable">lifecorreto</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="112001611822186" type="System">
+                            <param id="0" name="Object to create">ovni</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">399.4</param>
+                            <param id="3" name="Y">396.3</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="168914890316766" type="System">
+                            <param id="0" name="Group name">&quot;spawn2&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="463102403621199" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="150214634077700" type="System">
+                            <param id="0" name="Group name">&quot;death2&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="476097188126878">
+            <conditions>
+                <condition id="0" name="On clicked" sid="200191208192647" type="Button4" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="587217522929257" type="System">
+                    <param id="0" name="Variable">scorecorreto</param>
+                    <param id="1" name="Value">25000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="202648337101566">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="656327919692557" type="System">
+                    <param id="0" name="Variable">lifecorreto</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="569178658933660" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="939049597659906" type="Audio">
+                    <param id="0" name="Audio file">sfx_lowhealth_alarmloop3</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-3</param>
+                    <param id="1" name="Tag (optional)">&quot;loww&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
